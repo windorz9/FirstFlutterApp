@@ -79,6 +79,16 @@ class _RandomWordsState extends State<RandomWords> {
           alreadySaved ? Icons.favorite : Icons.favorite_border,
           color: alreadySaved ? Colors.red : null,
         ),
+        // 添加单元格的点击事件
+        onTap: (){
+          setState(() {
+            if (alreadySaved) {
+              _saved.remove(pair);
+            } else {
+              _saved.add(pair);
+            }
+          });
+        },
       );
     }
 }
